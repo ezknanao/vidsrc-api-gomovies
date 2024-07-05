@@ -42,11 +42,11 @@ app.get('/:tmdbId', async(req, res) => {
 
     const subtitles = await getSubtitles(vidplayLink)
 
-    const response = await (await fetch(`https://vidplay.online/mediainfo/${data}?${vidplayLink.split('?')[1]}&autostart=true`, {
+    const response = await (await fetch(`https://vidsrc.to/${data}?${vidplayLink.split('?')[1]}&autostart=true`, {
         headers: {
             "Origin": generateRandomIp(),
             "Referer": vidplayLink,
-            "Host": "vidplay.online",
+            "Host": "vidsrc.to",
             "User-Agent": generateRandomUserAgent()
         }
     })).json();
